@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../plugin/bootstrap-select-1.12.4/dist/css/bootstrap-select.min.css">
+    <title>ECharts</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn-group" style="margin: 10px 0 10px 0">
+            <button id='button1' type="button" class="btn btn-primary">医疗机构数据</button>
+            <button id='button2' type="button" class="btn btn-success">各类医院数据</button>
+        </div>
+
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div id="div1">
+            <div>
+                <p>截至2015年，我国共有：三级医院6,369所，其中公立5,916所，民营453所；二级医院22,482所， 其中公立18,348所，民营4,134所；一级医院26,277所，其中公立9,762所，民营16,515所。
+                </p>
+            </div>
+            <div id="main1" style="width: 1000px;height:400px;"></div>
+            <div class="pinglun">
+                <table class="table">
+                    <thead>
+                        <td class="active"><strong>用户评论：</strong></td>
+                    </thead>
+                    <tr>
+                        <td>
+                            <span style="vertical-align: middle">刘天文：三级医院大部分都是公司医院，民营医院水平差距太大了</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                            <span style="font-size: 15px;text-align: center;vertical-align:middle;">235</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="vertical-align: middle">张晶莹：江苏省三甲医院全部都是公立的</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                            <span style="font-size: 15px;text-align: center;vertical-align:middle;">187</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="vertical-align: middle">吴彦斌：大专家基本都是在公立医院，我们公司投的民营医院大部分也都是二级医院</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                            <span style="font-size: 15px;text-align: center;vertical-align:middle;">156</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <ul class="pagination" style="margin: 0">
+                                    <li><a href="javascipt:void(0)">&laquo;</a></li>
+                                    <li><a href="javascipt:void(0)">1</a></li>
+                                    <li><a href="javascipt:void(0)">2</a></li>
+                                    <li><a href="javascipt:void(0)">3</a></li>
+                                    <li><a href="javascipt:void(0)">4</a></li>
+                                    <li><a href="javascipt:void(0)">5</a></li>
+                                    <li><a href="javascipt:void(0)">&raquo;</a></li>
+                            </ul>        
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 0px">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" placeholder="请输入评论内容" style="width: 500px"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="margin-left: 20px">发送</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="div2" hidden="true">
+            <div>
+                <p>截至2015年，我国共有：综合医院52,290所，其中公立25,611所，民营26,679所；专科医院18,069所， 其中公立5,469所，民营12,600所；中医医院9,801所，其中公立7,005所，民营2,796所。
+                </p>
+            </div>
+            <div id="main2" style="width: 1000px;height:400px;"></div>
+            <div class="pinglun">
+                <table class="table">
+                    <thead>
+                        <td class="active"><strong>用户评论：</strong></td>
+                    </thead>
+                    <tr>
+                        <td>
+                            <span style="vertical-align: middle">许鸿：综合医院数量占比好高，民营和公立数量差不多</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                            <span style="font-size: 15px;text-align: center;vertical-align:middle;">185</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="vertical-align: middle">赵菲菲：综合医院数量差不多，医疗质量差别比较大</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                            <span style="font-size: 15px;text-align: center;vertical-align:middle;">147</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="vertical-align: middle">田胜：专科医院民营比公立活跃很多</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                            <span style="font-size: 15px;text-align: center;vertical-align:middle;">96</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <ul class="pagination" style="margin: 0">
+                                    <li><a href="javascipt:void(0)">&laquo;</a></li>
+                                    <li><a href="javascipt:void(0)">1</a></li>
+                                    <li><a href="javascipt:void(0)">2</a></li>
+                                    <li><a href="javascipt:void(0)">3</a></li>
+                                    <li><a href="javascipt:void(0)">4</a></li>
+                                    <li><a href="javascipt:void(0)">5</a></li>
+                                    <li><a href="javascipt:void(0)">&raquo;</a></li>
+                            </ul>        
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 0px">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" placeholder="请输入评论内容" style="width: 500px"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="margin-left: 20px">发送</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 300px;">
+            <div style="display: inline; margin-left: 30px;">
+                <label for="">按机构级别分类</label>
+                <select id="hospOrgType" class="selectpicker">
+                    <option id="hospAll" name="orgGrade" value=""> </option>
+                    <option id="hospZonghe" name="orgGrade" value="综合医院">综合医院</option>
+                    <option id="hospZhongyi" name="orgGrade" value="中医医院">中医医院</option>
+                    <option id="hospZhuanke" name="orgGrade" value="专科医院">专科医院</option>
+                </select>
+            </div>
+            <div style="margin-top: 10px">
+                <p>2015年，我国医院总数达到27,587所，当年增速6,7%，五年复合增长率5.8%。其中：综合医院17,430所，当年增速5.5%，五年复合增长率5.0%；中医医院3,267所，当年增速4.9%，五年复合增速3.6%；专科医院6,023所，当年增速9.9%，五年复合增长率8.9%。</p>
+            </div>
+            <div id="main3" style="height:400px;margin-top:20px"></div>
+            <div id="main3_2" style="height:400px;margin-top:20px"></div>
+            <div class="pinglun">
+                    <table class="table">
+                        <thead>
+                            <td class="active"><strong>用户评论：</strong></td>
+                        </thead>
+                        <tr>
+                            <td>
+                                <span style="vertical-align: middle">李世：专科医院最近五年增速都非常高，看来投资很热</span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                                <span style="font-size: 15px;text-align: center;vertical-align:middle;">235</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="vertical-align: middle">徐小萌：我们公司也是关注眼科口腔类专科医院</span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                                <span style="font-size: 15px;text-align: center;vertical-align:middle;">187</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="vertical-align: middle">苏小妹：综合医院增长速度也在加快，也存在很多机会</span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                                <span style="font-size: 15px;text-align: center;vertical-align:middle;">156</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle">
+                                <ul class="pagination" style="margin: 0">
+                                        <li><a href="javascipt:void(0)">&laquo;</a></li>
+                                        <li><a href="javascipt:void(0)">1</a></li>
+                                        <li><a href="javascipt:void(0)">2</a></li>
+                                        <li><a href="javascipt:void(0)">3</a></li>
+                                        <li><a href="javascipt:void(0)">4</a></li>
+                                        <li><a href="javascipt:void(0)">5</a></li>
+                                        <li><a href="javascipt:void(0)">&raquo;</a></li>
+                                </ul>        
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="margin-top: 0px">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <textarea type="text" class="form-control" placeholder="请输入评论内容" style="width: 500px"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary" style="margin-left: 20px">发送</button>
+                        </form>
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-sm-12" style="margin-top: 300px;margin-bottom: 50px">
+
+            <div style="display: inline; margin-left: 30px">
+                <label for="">按医院等级分类</label>
+                <select id="hospLevel" class="selectpicker">
+                    <option name="type_grade" value=""> </option>
+                    <option name="type_grade" value="三级医院">三级医院</option>
+                    <option name="type_grade" value="二级医院">二级医院</option>
+                    <option name="type_grade" value="一级医院">一级医院</option>
+                    <option name="type_grade" value="未定级">未定级</option>
+                </select>
+            </div>
+            <div style="display: inline; margin-left: 30px">
+                <label for="">按医院性质分类</label>
+                <select id="hospNature" class="selectpicker">
+                    <option name="type_nature" value="公立">公立</option>
+                    <option name="type_nature" value="民营">民营</option>
+                </select>
+            </div>
+            <div style="display: inline; margin-left: 30px">
+                <label for="">按机构级别分类</label>
+                <select id="hospOrg" class="selectpicker">
+                    <option name="type_org" value=""> </option>
+                    <option name="type_org" value="综合医院">综合医院</option>
+                    <option name="type_org" value="中医医院">中医医院</option>
+                    <option name="type_org" value="中西医结合医院">中西医结合医院</option>
+                    <option name="type_org" value="民族医院">民族医院</option>
+                    <option name="type_org" value="专科医院">专科医院</option>
+                    <option name="type_org" value="护理院">护理院</option>
+                    <option name="type_org" value="民营">民营</option>
+                </select>
+            </div>
+            <div id="main4" style="height:800px;margin-top:20px;margin-bottom: 20px"></div>
+            <div class="pinglun">
+                    <table class="table">
+                        <thead>
+                            <td class="active"><strong>用户评论：</strong></td>
+                        </thead>
+                        <tr>
+                            <td>
+                                <span style="vertical-align: middle">房林：三级医院总数广东、江苏、浙江前三，经济好的地方医疗肯定好</span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                                <span style="font-size: 15px;text-align: center;vertical-align:middle;">335</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="vertical-align: middle">谢伟康：民营三级医院湖北省最多，是不是有什么政策影响啊</span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                                <span style="font-size: 15px;text-align: center;vertical-align:middle;">287</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="vertical-align: middle">冯新翼：和武汉打造“中部医都”的规划有关，武汉有协和和同济医院这样的超级大型公立医院，但同样也出现了武汉亚心这样的知名民营三甲医院</span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 20px;color:#FF0000;text-align: center;vertical-align:middle;margin-left: 5px"></span>
+                                <span style="font-size: 15px;text-align: center;vertical-align:middle;">256</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle">
+                                <ul class="pagination" style="margin: 0">
+                                        <li><a href="javascipt:void(0)">&laquo;</a></li>
+                                        <li><a href="javascipt:void(0)">1</a></li>
+                                        <li><a href="javascipt:void(0)">2</a></li>
+                                        <li><a href="javascipt:void(0)">3</a></li>
+                                        <li><a href="javascipt:void(0)">4</a></li>
+                                        <li><a href="javascipt:void(0)">5</a></li>
+                                        <li><a href="javascipt:void(0)">&raquo;</a></li>
+                                </ul>        
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="margin-top: 0px">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <textarea type="text" class="form-control" placeholder="请输入评论内容" style="width: 500px"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary" style="margin-left: 20px">发送</button>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="../plugin/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="../plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../plugin/bootstrap-select-1.12.4/dist/js/bootstrap-select.min.js"></script>
+    <!-- 引入 echarts.js -->
+    <script src="../plugin/echarts.js"></script>
+
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+    <script src="../js/demo1.js"></script>
+    <script src="../js/mapData.js"></script>
+    <script src="../js/map.js"></script>
+</body>
+
+</html>
