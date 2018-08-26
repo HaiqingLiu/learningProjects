@@ -14,7 +14,7 @@
         </li>
       </router-link>
 
-      <router-link to="/mainPage">
+      <router-link to="/person/青青子衿/123456">
         <li>
           我的
         </li>
@@ -54,7 +54,7 @@ export default {
     margin: 0;
     padding: 0;
   }
-  
+
   a {
     text-decoration: none;
     color: white;

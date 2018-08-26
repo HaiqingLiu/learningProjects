@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/page/login.vue'
 import mainPage from '@/page/mainPage.vue'
+import person from '@/page/personal.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,14 @@ export default new Router({
         console.log(from)
         next() // 支持跳转 感觉像goto或者汇编里面的jump
       }
+    },
+    {
+      path: '/person/:name/:pwd', // 链接传参
+      component: person,
+      name: person
+    }, {
+      path: '/goHome',
+      redirect: '/' // 重定向
     }
   ]
 })

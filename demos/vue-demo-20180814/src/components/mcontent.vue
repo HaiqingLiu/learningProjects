@@ -10,9 +10,9 @@
 <script>
 export default {
   props: {
-      mcontent: String,
-      required: true,
-      default: '默认内容'
+    mcontent: String,
+    equired: true,
+    default: '默认内容'
   }
 }
 </script>
