@@ -1,0 +1,55 @@
+#main {
+    position: relative;
+    width: 1300px;
+    height: 600px;
+    margin: 0 auto;
+    background-color:  #ccccff;
+}
+
+.head button {
+    cursor: pointer;
+    margin-top: 5px;
+    background: none;/* 背景透明 */
+    border: none;/* 透明 */
+    font-size: small;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+.left {
+    float: left;
+    width: 100px;
+    height: 500px;
+    background-color: white;
+    padding: 5px;
+    margin-left: 10px; 
+}
+
+.center {
+    width: 500px;
+    height: 500px;
+    float: left;
+    padding: 10px; 
+    background-color: white;
+    margin-left: 120px;
+}
+
+.right {
+    width: 250px;
+    height: 500px;
+    float: right;
+    padding: 10px; 
+    background-color: white;
+    margin-right: 10px;
+}
+
+.rightHead {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
