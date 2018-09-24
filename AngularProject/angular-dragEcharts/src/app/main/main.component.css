@@ -3,7 +3,7 @@
     width: 1300px;
     height: 600px;
     margin: 0 auto;
-    background-color:  #ccccff;
+    background-color:  #CDC5BF;
 }
 
 .head button {
@@ -45,6 +45,10 @@ hr {
     margin-right: 10px;
 }
 
+.right>div {
+    margin: 8px 0;
+}
+
 .rightHead {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -52,4 +56,19 @@ hr {
 div {
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.upload-btn {
+    background-color: #008040;
+    display: inline-block;
+    width: 35px;
+    height: 17px;
+    padding: 2px 0;
+    border: 1px solid buttonface;
+    text-align: center;
+    margin-right: 5px;
 }
