@@ -1,0 +1,77 @@
+<div id="main">
+  <div class="head">
+    <button>保存</button>
+    <button style="margin-left: 5px">预览</button>
+  </div>
+  <hr>
+  <div class="left">
+    <div>
+      <img id="echart1" src="assets/imgs/line-simple-small.png" alt="" draggable="true" (dragstart)="dragThumbnail($event)">
+    </div>
+  </div>
+  <div id="centerId" class="center" [ngStyle]="areaStyle" (drop)="areaDragdrop($event)" (dragover)="allowDrop($event)"
+    [contextMenu]="basicMenu">
+    <!-- <app-chart-area></app-chart-area> -->
+    <div #dynamic></div>
+
+    <context-menu>
+      <ng-template contextMenuItem (execute)="mainContextMenuClick($event,'paste')">
+        粘贴
+      </ng-template>
+    </context-menu>
+  </div>
+
+  <div class="right">
+    <div [hidden]="currentSelecteChart">
+      <div class="rightHead">画布设置</div>
+      <hr>
+      <div class="row">
+        <label>宽度：</label>
+        <input type="text" [(ngModel)]="area.width">
+        <!-- <span>{{aaa}}</span> -->
+      </div>
+      <div class="row">
+        <label>高度：</label>
+        <input type="text" [(ngModel)]="area.height">
+        <!-- <span>{{bbb}}</span> -->
+      </div>
+      <div class="row">
+        <label>背景色：</label>
+        <input type="color" [(ngModel)]="area.backgroundColor">
+        <!-- <span>{{color}}</span> -->
+      </div>
+      <div class="row">
+        <label>背景图：</label>
+        <label class="upload-btn" for="file1">上传</label>
+        <input type="file" #file1 id="file1" accept="*.png" (change)="imgSelect($event)">
+        <input type="button" value="取消" (click)="clearImg()">
+      </div>
+      <div class="row">
+        <button style="background-color: #007acc" (click)="areaChange()">确定</button>
+        <button style="background-color: #007acc" (click)="areaReset()">重置</button>
+      </div>
+    </div>
+    <!-- echart属性设置 -->
+    <div [hidden]="!currentSelecteChart">
+      <div class="rightHead">属性设置</div>
+      <hr>
+      <div class="row">
+        <label for="">x轴数据:</label><input type="text" name="" id="" [(ngModel)]="controlOptions.xData">
+      </div>
+      <div class="row">
+        <label for="">y轴数据:</label><input type="text" name="" id="" [(ngModel)]="controlOptions.yData">
+      </div>
+      <div class="row">
+        <label for="">背景色:</label><input type="color" name="" id="" [(ngModel)]="controlOptions.color">
+      </div>
+      <div class="row">
+        <button style="background-color: #007acc" (click)="chartChange()">确定</button>
+        <button style="background-color: #007acc" (click)="chartReturn()">返回</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear: both">
+  </div>
+
+</div>

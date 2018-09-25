@@ -1,0 +1,9 @@
+.chart-area {
+  width: 300px;
+  height: 200px;
+}
+
+.selected {
+  border: 2px solid orange;
+  z-index: 1
+}

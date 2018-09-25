@@ -1,0 +1,37 @@
+<div [ngClass]="{selected:isChartSelected}" style="position:absolute;" [ngStyle]="chartStyle" (click)="selectChart()"
+  [contextMenu]="basicMenu">
+  <div echarts [options]=" _chartOptions" class="chart-area"></div>
+
+  <context-menu>
+    <ng-template contextMenuItem (execute)="contextMenuClick($event,'cut')">
+      剪切
+    </ng-template>
+    <ng-template contextMenuItem (execute)="contextMenuClick($event,'copy')">
+      复制
+    </ng-template>
+    <ng-template contextMenuItem (execute)="contextMenuClick($event,'paste')">
+      粘贴
+    </ng-template>
+    <ng-template contextMenuItem (execute)="contextMenuClick($event,'delete')">
+      删除
+    </ng-template>
+    <!-- <ng-template contextMenuItem [subMenu]="saySubMenu">
+      排列
+    </ng-template>
+    <context-menu #saySubMenu>
+      <ng-template contextMenuItem (execute)="showMessage('Hi, ' + $event.item.name)">
+        置于顶层
+      </ng-template>
+      <ng-template contextMenuItem (execute)="showMessage('Hola, ' + $event.item.name)">
+        置于底层
+      </ng-template>
+      <ng-template contextMenuItem (execute)="showMessage('Salut, ' + $event.item.name)">
+        上移一层
+      </ng-template>
+      <ng-template contextMenuItem (execute)="showMessage('Salut, ' + $event.item.name)">
+        下移一层
+      </ng-template>
+    </context-menu> -->
+
+  </context-menu>
+</div>
