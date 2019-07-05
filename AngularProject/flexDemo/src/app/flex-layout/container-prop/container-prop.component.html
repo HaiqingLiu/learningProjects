@@ -1,0 +1,31 @@
+<nz-layout>
+    <nz-sider [nzWidth]="'30%'" class="sider">
+        <div *ngFor="let item of containerPropList,let i=index;" class="top20">
+            <h3 class="cursor-pointer">
+                <span nzPlacement="topLeft" nz-tooltip [nzTitle]="item.description">{{item.propName}}</span>
+            </h3>
+            <nz-radio-group [(ngModel)]="item.prop" (ngModelChange)="radioValChange($event, i)">
+                <label *ngFor="let v of item.propValues" nz-radio [nzValue]="v[0]">
+                    <span nz-tooltip [nzTitle]="v[1]">{{v[0]}}</span>
+                </label>
+            </nz-radio-group>
+        </div>
+    </nz-sider>
+    <nz-content class="content">
+        <div class="outer" [ngStyle]="flexContainer">
+            <div>00000</div>
+            <div>11111</div>
+            <div>22222</div>
+            <div>33333</div>
+            <div>44444</div>
+            <div>55555</div>
+            <div>66666</div>
+            <div>77777</div>
+            <div>88888</div>
+            <div>99999</div>
+            <div>AAAAA</div>
+            <div>BBBBB</div>
+            <div>CCCCC</div>
+        </div>
+    </nz-content>
+</nz-layout>

@@ -1,0 +1,14 @@
+<div>
+    <nz-tabset>
+        <nz-tab *ngFor="let tab of tabs" [nzTitle]="tab.title">
+            <div nz-row [ngSwitch]="tab.key">
+                <div *ngSwitchCase="'containerProperty'">
+                    <app-container-prop></app-container-prop>
+                </div>
+                <div *ngSwitchCase="'itemProperty'">
+                    <app-item-prop></app-item-prop>
+                </div>
+            </div>
+        </nz-tab>
+    </nz-tabset>
+</div>
