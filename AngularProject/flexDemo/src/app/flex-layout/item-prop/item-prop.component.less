@@ -1,0 +1,123 @@
+.outer>div {
+  margin: 3px;
+  padding: 5px;
+  border: 1px solid orange;
+  background-color: white;
+}
+
+.outer {
+  display: flex;
+  margin-bottom: 20px;
+  overflow: auto;
+  border: 2px solid blue;
+  height: 60px;
+}
+
+.flag1 {
+  color: red;
+}
+
+.flag1::after {
+  content: ' ';
+  display: flex;
+  position: absolute;
+}
+
+.flag2 {
+  color: blue;
+}
+
+.sider {
+  background-color: #fff;
+}
+
+.content {
+  //   background-color: #fff;
+}
+
+.flag2::after {
+  content: ' ';
+  display: flex;
+  position: absolute;
+}
+
+/* order */
+.order .test1 {
+  order: -1;
+}
+
+.order .test1::after {
+  content: 'order:-1';
+}
+
+.order .test2 {
+  order: 2;
+}
+
+.order .test2::after {
+  content: 'order:2';
+}
+
+/* flex-grow */
+.flex-grow .test1 {
+  flex-grow: 1;
+}
+
+.flex-grow .test1::after {
+  content: 'flex-grow:1';
+}
+
+.flex-grow .test2 {
+  flex-grow: 9;
+}
+
+.flex-grow .test2::after {
+  content: 'flex-grow:9';
+}
+
+/* flex-shrink */
+.flex-shrink>div {
+  flex-basis: 70px;
+}
+
+.flex-shirink-compare>div {
+  flex-basis: 70px;
+  flex-shrink: 0;
+}
+
+.flex-shrink .test1 {
+  flex-shrink: 2;
+}
+
+.flex-shrink .test1::after {
+  content: 'flex-shrink:2';
+}
+
+.flex-shrink .test2 {
+  flex-shrink: 9;
+}
+
+.flex-shrink .test2::after {
+  content: 'flex-shrink:9';
+}
+
+/* align-self */
+.align-self {
+  align-items: center;
+}
+
+.align-self .test1 {
+  align-self: flex-start;
+}
+
+.align-self .test1::after {
+  content: 'flex-start';
+}
+
+.align-self .test2 {
+  align-self: flex-end;
+}
+
+.align-self .test2::after {
+  content: 'flex-end';
+}

@@ -1,1 +1,34 @@
-<p>item-prop works!</p>
+<nz-layout>
+    <nz-sider [nzWidth]="'30%'" class="sider">
+        <div class="top20">
+            <nz-radio-group [(ngModel)]="currentModel">
+                <label *ngFor="let v of ['null','order','flex-grow','flex-shrink','align-self']" nz-radio [nzValue]="v">
+                    <span nz-tooltip [nzTitle]="v">{{v}}</span>
+                </label>
+            </nz-radio-group>
+        </div>
+    </nz-sider>
+    <nz-content class="content">
+        <div class="outer" [class.flex-shirink-compare]="currentModel=='flex-shrink'">
+            <div>11111</div>
+            <div>22222</div>
+            <div>33333</div>
+            <div class="flag1">44444</div>
+            <div>55555</div>
+            <div class="flag2">66666</div>
+            <div>77777</div>
+            <div>88888</div>
+        </div>
+
+        <div class="outer" [ngClass]="currentModel">
+            <div>11111</div>
+            <div>22222</div>
+            <div>33333</div>
+            <div class="flag1 test1">44444</div>
+            <div>55555</div>
+            <div class="flag2 test2">66666</div>
+            <div>77777</div>
+            <div>88888</div>
+        </div>
+    </nz-content>
+</nz-layout>

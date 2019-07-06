@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./item-prop.component.less']
 })
 export class ItemPropComponent implements OnInit {
+    currentModel = 'null';
 
     constructor() { }
 
