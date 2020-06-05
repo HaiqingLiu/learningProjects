@@ -2,7 +2,7 @@
   "name": "vue-drag-echarts",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "liuhaiqing <liuhaiqing@yunzhangfang.com>",
+  "author": "liuhaiqing <531589768@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
